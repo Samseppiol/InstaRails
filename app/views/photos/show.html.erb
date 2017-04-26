@@ -5,7 +5,7 @@
 </figure>
 
 <%= form_for @photo_like, method: :patch do |f| %>
-  <%= f.submit @photo.liked_by?(current_user) ? 'Unlike' : 'Like' %>
+  <%= f.button like_icon(@photo.liked_by?(current_user)) %>
 <% end %>
 
 <p>
