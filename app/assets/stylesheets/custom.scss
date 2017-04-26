@@ -1,0 +1,27 @@
+$navbar-default-bg: black;
+
+
+
+
+
+
+
+#logo {
+  float: left;
+  font-size: 1.25em;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.cust-jumbotron {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  height: auto;
+  text-align: center;
+  background-image: asset-url('warmboards.jpg');
+  color: white;
+  font-family: sans-serif;
+}

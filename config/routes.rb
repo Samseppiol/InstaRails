@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'photos#index'
+  root 'pages#home'
   resources :photos do
     member do
       resource :photo_likes, path: 'like', only: [:update]

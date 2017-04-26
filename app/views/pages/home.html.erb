@@ -1,0 +1,7 @@
+<div class="center jumbotron cust-jumbotron">
+  <h1>Welcome to InstaRails</h1>
+  <p>The most badass insta rails around</p>
+  <% if !user_signed_in? %>
+    <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-lg btn-xlarge" %>
+  <%end %>
+</div>
