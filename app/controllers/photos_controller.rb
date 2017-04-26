@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   # GET /photos
@@ -10,6 +11,7 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    @photo_like = PhotoLike.new(photo: @photo)
   end
 
   # GET /photos/new
@@ -70,6 +72,6 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:user_id, :image, :description)
+      params.require(:photo).permit(:image, :description)
     end
 end

@@ -1,0 +1,9 @@
+<h1><%= @user.email %></h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Photos</h1>
+<%= render 'grid' photos: @photos %>
+
+<br>
+
+<%= link_to 'New Photo', new_photo_path %>
