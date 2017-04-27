@@ -5,7 +5,8 @@ Rails.application.routes.draw do
       resource :photo_likes, path: 'like', only: [:update]
     end
   end
-  devise_for :users
+  resources :photo_comments
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users, only:[:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

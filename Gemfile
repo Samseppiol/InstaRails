@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'devise-bootstrap-views'
+gem 'simple_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

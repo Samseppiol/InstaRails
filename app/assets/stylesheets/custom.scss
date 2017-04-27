@@ -8,6 +8,10 @@ $navbar-default-bg: black;
   font-weight: bold;
 }
 
+.jumbotron p {
+  padding-top: 20px;
+}
+
 .cust-jumbotron {
   margin-left: auto;
   margin-right: auto;
@@ -25,4 +29,18 @@ margin-top: 50px;
 padding-top: 10px;
 border-top: 2px solid black;
 color: #777;
+}
+
+.wrapper {
+  color: white;
+}
+
+.cust-users {
+  padding-top: 20px;
+  background: gray;
+  color: white;
+}
+
+.cust-users a {
+  color: white;
 }

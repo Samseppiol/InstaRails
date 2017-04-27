@@ -1,8 +1,13 @@
-<h1>Users</h1>
-
-<% @users.each do |user| %>
-  <div>
-    <h2><%= link_to user.email, user %> </h2>
-    <p> <%= pluralize user.photos.count, 'photo' %></p>
+<h1 align='center'>Insta Rails Users</h1>
+<div class='row wrapper'>
+  <div class=' col-md-8 col-md-offset-2'>
+    <div align='center'>
+      <% @users.each do |user| %>
+        <div class='well cust-users'>
+          <h2><%= link_to "#{user.first_name + (' ') + user.last_name}", user %> </h2>
+          <p> <%= pluralize user.photos.count, 'photo' %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
