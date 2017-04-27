@@ -1,4 +1,4 @@
-class AddPhField < ActiveRecord::Migration[5.0]
+class ReAddPhone < ActiveRecord::Migration[5.0]
   def change
     add_column :users, :phone_number, :string
   end

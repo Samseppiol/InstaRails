@@ -4,7 +4,7 @@
     <div align='center'>
       <% @users.each do |user| %>
         <div class='well cust-users'>
-          <h2><%= link_to "#{user.first_name + (' ') + user.last_name}", user %> </h2>
+          <h2><%= link_to "#{user.username}", user %> </h2>
           <p> <%= pluralize user.photos.count, 'photo' %></p>
         </div>
       <% end %>

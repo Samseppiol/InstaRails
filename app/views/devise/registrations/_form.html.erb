@@ -1,0 +1,58 @@
+<%= bootstrap_devise_error_messages! %>
+<div class="panel panel-default devise-bs">
+  <div class="panel-heading">
+    <% if user_signed_in? %>
+    <h4><%= t('.title', resource: resource_class.model_name.human , default: "Edit #{resource_name.to_s.humanize}") %></h4>
+    <% else %>
+    <h4><%= t('.sign_up', default: 'Sign up') %></h4>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form' }) do |f| %>
+      <div class="form-group">
+        <%= f.label :username  %>
+        <%= f.text_field :username, autofocus: true, placeholder: 'Pick a username', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :first_name  %>
+        <%= f.text_field :first_name, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :last_name  %>
+      <%= f.text_field :last_name, autofocus: true, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :date_of_birth  %>
+      <%= f.date_select :date_of_birth, autofocus: true, placeholder: 'DD/MM/YEAR', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+      <%= f.label :phone_number  %>
+      <%= f.phone_field :phone_number, autofocus: true, placeholder: 'Eg. 0423421567', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, placeholder: 'Eg johnsmith@live.com', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, placeholder: 'Choose a secure password', class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, placeholder: 'Choose a secure password', class: 'form-control' %>
+      </div>
+        <% if user_signed_in? %>
+          <div class="form-group">
+            <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes', default: 'we need your current password to confirm your changes') %>)</i>
+            <%= f.password_field :current_password, class: 'form-control' %>
+          </div>
+          <%= f.submit t('.sign_up', default: 'Edit User'), class: 'btn btn-primary' %>
+          <% else %>
+          <%= f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary' %>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+<p><%= t('.unhappy', default: 'Unhappy') %>? <%= link_to t('.cancel_my_account', default: 'Cancel my account'), registration_path(resource_name), data: { confirm: t('.are_you_sure', default: "Are you sure?") }, method: :delete %>.</p>
+
+<%= link_to t('.back', default: 'Back'), :back %>
